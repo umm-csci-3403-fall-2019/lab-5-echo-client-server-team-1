@@ -21,14 +21,12 @@ public class EchoClient {
             // Get the input stream so we can read from that socket
             InputStream input = socket.getInputStream();
 	    OutputStream output = socket.getOutputStream();
-            InputStreamReader reader = new InputStreamReader(input);
-
 
             // Print all the input we receive from the server
             int line;
             while ((line = System.in.read()) != -1) {
 		   output.write(line);
-		   int out = reader.read();
+		   int out = input.read();
 		   System.out.write(out);
             }
 
