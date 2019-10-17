@@ -18,10 +18,14 @@ public static final int portNumber = 6013;
 
         // Construct a writer so we can write to the socket, thereby
         // sending something back to the client.
-        PrintStream writer = new PrintStream(client.getOutputStream(), true);
+        OutputStream output = client.getOutputStream();
+	InputStream input = client.getInputStream();
 
         // Send the current date back tothe client.
-        while(writer){}
+	int line;
+        while((line = input.read()) != -1){
+		output.write(line);
+	}
 
         // Close the client socket since we're done.
         client.close();
