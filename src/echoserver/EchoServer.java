@@ -26,6 +26,7 @@ public static final int portNumber = 6013;
         while((line = input.read()) != -1){
 		output.write(line);
 	}
+	output.flush();
 
         // Close the client socket since we're done.
         client.close();

@@ -29,6 +29,7 @@ public class EchoClient {
 		   int out = input.read();
 		   System.out.write(out);
             }
+	    System.out.flush();
 
             // Close the socket when we're done reading from it
             socket.close();
